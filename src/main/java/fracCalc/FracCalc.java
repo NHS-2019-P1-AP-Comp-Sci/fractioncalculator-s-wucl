@@ -31,7 +31,27 @@ public class FracCalc {
     // The function should return the result of the fraction after it has been calculated
     //      e.g. return ==> "1_1/4"
     public static String produceAnswer(String input){
-    	String temp = input
+    	String temp = "";
+    	String operand1 = "";
+    	String operand2 = "";
+    	String operand3 = "";
+    	
+    	for (int i = 0; i < input.length(); i++) {
+    		if (input.charAt(i) == ' ') {    			
+    			if (operand1.equals("")) {
+    				operand1 = temp;
+        			temp = "";
+    			}
+    			else {
+        			operand2 = temp;
+        			temp = "";
+        		}
+    		}
+    		else if () {
+    			
+    		}
+    	}
+    /*	
     	String operand1 = temp.substring(0, temp.indexOf(' '));
     	temp = temp.substring(temp.indexOf(' ') + 1);
     	String operator = temp.substring(0, temp.indexOf(' '));
@@ -55,7 +75,7 @@ public class FracCalc {
     		}
     	}
     	Scanner s = new Scanner(input);
-    
+    */
         return operand1;
     }
 
