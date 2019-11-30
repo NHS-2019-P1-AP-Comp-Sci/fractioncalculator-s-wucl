@@ -13,6 +13,7 @@ public class FracCalc {
     	Scanner s = new Scanner(System.in);
     	
     	System.out.print("Enter a fraction problem: ");
+    	
     	String userResponse = s.nextLine();
     	
     	while (!s.equals("quit")) {
