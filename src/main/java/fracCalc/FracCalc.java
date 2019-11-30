@@ -83,6 +83,35 @@ public class FracCalc {
     			
     		}
     	}
+    	   public static int produceAnswer(String input){ 
+    		      String frac1 = input.substring(0, input.indexOf(" "));
+    		      String operator = input.substring(input.indexOf(" ") + 1, input.indexOf(" ") + 2);
+    		      String frac2 = input.substring(input.indexOf(" ") + 3);
+    		      String whole1 = frac1;
+    		      String numerator1 = "0";
+    		      String denominator1 = "1";
+    		      if (frac1.indexOf("/") != -1){
+    		        if (frac1.indexOf("_") != -1){
+    		          whole1 = frac1.substring(0, frac1.indexOf("_"));
+    		        }else{
+    		          whole1 = "0";
+    		        }
+    		        numerator1 = frac1.substring(frac1.indexOf("_") + 1, frac1.indexOf("/"));
+    		        denominator1 = frac1.substring(frac1.indexOf("/") + 1, frac1.length());
+    		      }
+    		      String whole2 = frac2;
+    		      String numerator2 = "0";
+    		      String denominator2 = "1";
+    		      if (frac2.indexOf("/") != -1){
+    		        if (frac2.indexOf("_") != -1){
+    		          whole2 = frac2.substring(0, frac2.indexOf("_"));
+    		        }else{
+    		          whole2 = "0";
+    		        }
+    		        numerator2 = frac2.substring(frac2.indexOf("_") + 1, frac2.indexOf("/"));
+    		        denominator2 = frac2.substring(frac2.indexOf("/") + 1, frac2.length());
+    		      }
+    		      int result = Integer.valueOf(numerator2);
     /*	
     	String operand1 = temp.substring(0, temp.indexOf(' '));
     	temp = temp.substring(temp.indexOf(' ') + 1);
