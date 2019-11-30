@@ -11,6 +11,7 @@ public class FracCalc {
     public static void main(String[] args)
     {
     	Scanner s = new Scanner(System.in);
+    	
     	System.out.print("Enter a fraction problem: ");
     	String userResponse = s.nextLine();
     	
@@ -36,6 +37,37 @@ public class FracCalc {
     	String operand2 = "";
     	String operand3 = "";
     	
+    	String op2Whole = findWhole(operand2);
+    	String op2Num = findNum(operand2);
+    	String op2Denom = findDenom(operand2);
+    	
+    	String chk2Answer = "whole:" + op2Whole + " numerator:" +
+    						op2Num + " denominator:" + op2Denom;
+    	
+    	public static String findWhole(String str) {
+    		// This could be a mixed number, a fraction, or a whole number
+    		if(str.contains("_")) {
+    			return str.substring(0, str.indexOf('_'));
+    		}
+    		if(str.contains("/")) {
+    			return "0";
+    		}
+    		else return str;
+    	}
+    	public static String findNum(String str) {
+    		if(str.contains("_")) {
+    			return str.substring(str.indexOf('_') + 1, str.indexOf('/'));
+    		}else if(str.contains("/")) {
+    			return str.substring(0, str.indexOf('/'));
+    		}else {
+    			return "0";
+    		}
+    	}
+    	public static String findDenom(String str) {
+    		if(str.contains("/")) {
+    			str.substring(str.indexOf("/")+1);
+    		}
+    	}
     	for (int i = 0; i < input.length(); i++) {
     		if (input.charAt(i) == ' ') {    			
     			if (operand1.equals("")) {
@@ -78,6 +110,5 @@ public class FracCalc {
     */
         return operand1;
     }
-
 
 }
